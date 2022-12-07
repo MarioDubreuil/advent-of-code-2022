@@ -11,7 +11,7 @@ public class Test_MyExtensions
     public void SplitByElf_WhenOneElf_ShouldBeOk(string rawData)
     {
         var dataSplitByElf = rawData.SplitByElf();
-        Assert.Equal(new string[] {rawData}, dataSplitByElf);
+        Assert.Equal(new string[] { rawData }, dataSplitByElf);
     }
 
     [Theory]
@@ -20,7 +20,7 @@ public class Test_MyExtensions
     public void SplitByElf_WhenTwoElves_ShouldBeOk(string rawData, string elf1, string elf2)
     {
         var dataSplitByElf = rawData.SplitByElf();
-        Assert.Equal(new string[] {elf1, elf2}, dataSplitByElf);
+        Assert.Equal(new string[] { elf1, elf2 }, dataSplitByElf);
     }
 
     [Fact]
@@ -28,6 +28,6 @@ public class Test_MyExtensions
     {
         var rawData = "1000\n2000\n3000\n\n4000\n\n5000\n6000\n\n7000\n8000\n9000\n\n10000";
         var dataSplitByElf = rawData.SplitByElf();
-        Assert.Equal(new string[] {"1000\n2000\n3000", "4000", "5000\n6000", "7000\n8000\n9000", "10000"}, dataSplitByElf);
+        Assert.Equal(new string[] { "1000\n2000\n3000", "4000", "5000\n6000", "7000\n8000\n9000", "10000" }, dataSplitByElf);
     }
 }
