@@ -56,4 +56,11 @@ public class Test_Expedition
         var expedition = new Expedition("2000\n7000\n1000\n\n1000\n\n9000\n5000\n7000\n5000");
         expedition.MaximumCalories.Should().Be(26000);
     }
+    
+    [Fact]
+    public void TotalCaloriesForTop3Elves()
+    {
+        var expedition = new Expedition("1000\n2000\n3000\n4000\n\n5000\n6000\n\n7000\n8000\n9000\n\n10000");
+        expedition.TotalCaloriesForTop3Elves.Should().Be(45000);
+    }
 }
