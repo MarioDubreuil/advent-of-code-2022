@@ -1,3 +1,6 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using puzzle_02;
 
-Console.WriteLine("Hello, World!");
+var filePath = "/Users/mario/Perso/repos/advent-of-code-2022/puzzle-02/data-real.txt";
+var data = File.ReadAllText(filePath);
+var tournament = new Tournament(data);
+Console.WriteLine($"MyScore: {tournament.MyScore}");

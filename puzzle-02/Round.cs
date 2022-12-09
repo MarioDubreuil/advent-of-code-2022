@@ -32,13 +32,13 @@ public class Round
             {
                 'R' => 1,
                 'P' => 2,
-                _ => 3
+                _   => 3
             };
             myScore += MyOutcome switch
             {
                 'W' => 6,
                 'D' => 3,
-                _ => 0
+                _   => 0
             };
             return myScore;
         }
@@ -50,13 +50,13 @@ public class Round
         {
             'A' => 'R',
             'B' => 'P',
-            'C' => 'C'
+            _   => 'C'
         };
         MyShape = data[2] switch
         {
             'X' => 'R',
             'Y' => 'P',
-            'Z' => 'C'
+            _   => 'C'
         };
     }
 }
