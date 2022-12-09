@@ -1,7 +1,7 @@
-Advent of Code[About][Events][Shop][Settings][Log Out](anonymous user #2508325) 3*
-        //2022[Calendar][AoC++][Sponsors][Leaderboard][Stats]
+Advent of Code[About][Events][Shop][Settings][Log Out](anonymous user #2508325) 4*
+ {'year':2022}[Calendar][AoC++][Sponsors][Leaderboard][Stats]
 Our sponsors help make Advent of Code possible:
-Ntropy - The Ntropy API enables companies to build a new generation of products and services on top of financial transaction data.
+Kotlin by JetBrains - Trees, lists, packages - it's Advent of Code time! Get ready to solve puzzles in Kotlin. Watch us livestream our discussions about the solutions for the first few puzzles, join our leaderboard, win prizes. Happy holidays!
 --- Day 2: Rock Paper Scissors ---
 The Elves begin to set up camp on the beach. To decide whose tent gets to be closest to the snack storage, a giant Rock Paper Scissors tournament is already in progress.
 
@@ -31,8 +31,6 @@ What would your total score be if everything goes exactly according to your stra
 
 Your puzzle answer was 15337.
 
-The first half of this puzzle is complete! It provides one gold star: *
-
 --- Part Two ---
 The Elf finishes helping with the tent and sneaks back over to you. "Anyway, the second column says how the round needs to end: X means you need to lose, Y means you need to end the round in a draw, and Z means you need to win. Good luck!"
 
@@ -45,9 +43,12 @@ Now that you're correctly decrypting the ultra top secret strategy guide, you wo
 
 Following the Elf's instructions for the second column, what would your total score be if everything goes exactly according to your strategy guide?
 
-Answer: 
- 
+Your puzzle answer was 11696.
 
-Although it hasn't changed, you can still get your puzzle input.
+Both parts of this puzzle are complete! They provide two gold stars: **
+
+At this point, you should return to your Advent calendar and try another puzzle.
+
+If you still want to see it, you can get your puzzle input.
 
 You can also [Share] this puzzle.
