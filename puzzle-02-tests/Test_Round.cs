@@ -6,16 +6,16 @@ namespace puzzle_02_tests;
 public class TestRound
 {
     [Theory]
-    [InlineData("A X", 'R', 'R')]
-    [InlineData("A Y", 'R', 'P')]
-    [InlineData("A Z", 'R', 'C')]
-    [InlineData("B X", 'P', 'R')]
-    [InlineData("B Y", 'P', 'P')]
-    [InlineData("B Z", 'P', 'C')]
-    [InlineData("C X", 'C', 'R')]
-    [InlineData("C Y", 'C', 'P')]
-    [InlineData("C Z", 'C', 'C')]
-    public void CreateRound(string shapes, char opponentShape, char myShape)
+    [InlineData("A X", Shape.Rock, Shape.Rock)]
+    [InlineData("A Y", Shape.Rock, Shape.Paper)]
+    [InlineData("A Z", Shape.Rock, Shape.Scissors)]
+    [InlineData("B X", Shape.Paper, Shape.Rock)]
+    [InlineData("B Y", Shape.Paper, Shape.Paper)]
+    [InlineData("B Z", Shape.Paper, Shape.Scissors)]
+    [InlineData("C X", Shape.Scissors, Shape.Rock)]
+    [InlineData("C Y", Shape.Scissors, Shape.Paper)]
+    [InlineData("C Z", Shape.Scissors, Shape.Scissors)]
+    public void CreateRound(string shapes, Shape opponentShape, Shape myShape)
     {
         var round = new Round(shapes);
         round.OpponentShape.Should().Be(opponentShape);

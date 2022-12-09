@@ -1,17 +1,19 @@
+using System.Xml.Schema;
+
 namespace puzzle_02;
 
 public class Round
 {
-    public char OpponentShape { get; private set; }
-    public char MyShape { get; private set; }
+    public Shape OpponentShape { get; private set; }
+    public Shape MyShape { get; private set; }
     
     public Outcome MyOutcome
     {
         get
         {
-            if (MyShape == 'R' && OpponentShape == 'C' ||
-                MyShape == 'P' && OpponentShape == 'R' ||
-                MyShape == 'C' && OpponentShape == 'P')
+            if (MyShape == Shape.Rock && OpponentShape == Shape.Scissors ||
+                MyShape == Shape.Paper && OpponentShape == Shape.Rock ||
+                MyShape == Shape.Scissors && OpponentShape == Shape.Paper)
             {
                 return Outcome.Win;
             }
@@ -19,7 +21,6 @@ public class Round
             {
                 return Outcome.Draw;
             }
-
             return Outcome.Loss;
         }
     }
@@ -30,8 +31,8 @@ public class Round
         {
             var myScore = MyShape switch
             {
-                'R' => 1,
-                'P' => 2,
+                Shape.Rock => 1,
+                Shape.Paper => 2,
                 _   => 3
             };
             myScore += MyOutcome switch
@@ -48,15 +49,15 @@ public class Round
     {
         OpponentShape = data[0] switch
         {
-            'A' => 'R',
-            'B' => 'P',
-            _   => 'C'
+            'A' => Shape.Rock,
+            'B' => Shape.Paper,
+            _   => Shape.Scissors
         };
         MyShape = data[2] switch
         {
-            'X' => 'R',
-            'Y' => 'P',
-            _   => 'C'
+            'X' => Shape.Rock,
+            'Y' => Shape.Paper,
+            _   => Shape.Scissors
         };
     }
 }
