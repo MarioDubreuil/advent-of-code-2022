@@ -1,10 +1,9 @@
-using System.Globalization;
 using FluentAssertions;
 using puzzle_02;
 
 namespace puzzle_02_tests;
 
-public class Test_Round
+public class TestRound
 {
     [Theory]
     [InlineData("A X", 'R', 'R')]
@@ -24,16 +23,16 @@ public class Test_Round
     }
     
     [Theory]
-    [InlineData("A X", 'D')]
-    [InlineData("A Y", 'W')]
-    [InlineData("A Z", 'L')]
-    [InlineData("B X", 'L')]
-    [InlineData("B Y", 'D')]
-    [InlineData("B Z", 'W')]
-    [InlineData("C X", 'W')]
-    [InlineData("C Y", 'L')]
-    [InlineData("C Z", 'D')]
-    public void MyOutcome(string shapes, char myOutcome)
+    [InlineData("A X", Outcome.Draw)]
+    [InlineData("A Y", Outcome.Win)]
+    [InlineData("A Z", Outcome.Loss)]
+    [InlineData("B X", Outcome.Loss)]
+    [InlineData("B Y", Outcome.Draw)]
+    [InlineData("B Z", Outcome.Win)]
+    [InlineData("C X", Outcome.Win)]
+    [InlineData("C Y", Outcome.Loss)]
+    [InlineData("C Z", Outcome.Draw)]
+    public void MyOutcome(string shapes, Outcome myOutcome)
     {
         var round = new Round(shapes);
         round.MyOutcome.Should().Be(myOutcome);

@@ -3,7 +3,7 @@ using puzzle_02;
 
 namespace puzzle_02_tests;
 
-public class Test_Tournament
+public class TestTournament
 {
     [Fact]
     public void CreateTournamentWithOneRound()

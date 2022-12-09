@@ -5,7 +5,7 @@ public class Round
     public char OpponentShape { get; private set; }
     public char MyShape { get; private set; }
     
-    public char MyOutcome
+    public Outcome MyOutcome
     {
         get
         {
@@ -13,14 +13,14 @@ public class Round
                 MyShape == 'P' && OpponentShape == 'R' ||
                 MyShape == 'C' && OpponentShape == 'P')
             {
-                return 'W';
+                return Outcome.Win;
             }
             else if (MyShape == OpponentShape)
             {
-                return 'D';
+                return Outcome.Draw;
             }
 
-            return 'L';
+            return Outcome.Loss;
         }
     }
 
@@ -36,8 +36,8 @@ public class Round
             };
             myScore += MyOutcome switch
             {
-                'W' => 6,
-                'D' => 3,
+                Outcome.Win => 6,
+                Outcome.Draw => 3,
                 _   => 0
             };
             return myScore;
