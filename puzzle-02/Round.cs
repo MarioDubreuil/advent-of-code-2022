@@ -5,23 +5,29 @@ namespace puzzle_02;
 public class Round
 {
     public Shape OpponentShape { get; private set; }
-    public Shape MyShape { get; private set; }
+    public Outcome MyOutcome { get; private set; }
     
-    public Outcome MyOutcome
+    public Shape MyShape
     {
         get
         {
-            if (MyShape == Shape.Rock && OpponentShape == Shape.Scissors ||
-                MyShape == Shape.Paper && OpponentShape == Shape.Rock ||
-                MyShape == Shape.Scissors && OpponentShape == Shape.Paper)
+            var myShape = MyOutcome switch
             {
-                return Outcome.Win;
-            }
-            else if (MyShape == OpponentShape)
-            {
-                return Outcome.Draw;
-            }
-            return Outcome.Loss;
+                Outcome.Win => OpponentShape switch
+                {
+                    Shape.Rock => Shape.Paper,
+                    Shape.Paper => Shape.Scissors,
+                    _ => Shape.Rock
+                },
+                Outcome.Loss => OpponentShape switch
+                {
+                    Shape.Rock => Shape.Scissors,
+                    Shape.Paper => Shape.Rock,
+                    _ => Shape.Paper
+                },
+                _ => OpponentShape
+            };
+            return myShape;
         }
     }
 
@@ -53,11 +59,12 @@ public class Round
             'B' => Shape.Paper,
             _   => Shape.Scissors
         };
-        MyShape = data[2] switch
+        
+        MyOutcome = data[2] switch
         {
-            'X' => Shape.Rock,
-            'Y' => Shape.Paper,
-            _   => Shape.Scissors
+            'X' => Outcome.Loss,
+            'Y' => Outcome.Draw,
+            _   => Outcome.Win
         };
     }
 }

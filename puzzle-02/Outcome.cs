@@ -2,7 +2,7 @@ namespace puzzle_02;
 
 public enum Outcome
 {
-    Win,
+    Loss,
     Draw,
-    Loss
+    Win
 }
