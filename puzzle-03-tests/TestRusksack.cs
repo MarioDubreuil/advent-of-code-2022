@@ -8,19 +8,25 @@ public class TestRusksack
     [Fact]
     public void CreateRucksack_Data()
     {
-        var data = "a23b47cd";
+        var data = "awRspEwz";
         var rucksack = new Rucksack(data);
         rucksack.Data.Should().Be(data);
     }
     
     [Fact]
-    public void CreateRucksack_Compatements()
+    public void CreateRucksack_Compartments()
     {
-        var leftData = "a23b";
-        var rightData = "47cd";
-        var data = leftData + rightData;
+        var data = "awRspEwz";
         var rucksack = new Rucksack(data);
-        rucksack.FirstCompartment.Should().Be(leftData);
-        rucksack.SecondCompartment.Should().Be(rightData);
+        rucksack.FirstCompartment.Should().Be("awRs");
+        rucksack.SecondCompartment.Should().Be("pEwz");
+    }
+    
+    [Fact]
+    public void CreateRucksack_CommonItemType()
+    {
+        var data = "awRspEwz";
+        var rucksack = new Rucksack(data);
+        rucksack.CommonItemType.Should().Be('w');
     }
 }
