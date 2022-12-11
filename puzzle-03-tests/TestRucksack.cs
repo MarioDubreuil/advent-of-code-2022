@@ -3,7 +3,7 @@ using puzzle_03;
 
 namespace puzzle_03_tests;
 
-public class TestRusksack
+public class TestRucksack
 {
     [Fact]
     public void CreateRucksack_Data()
@@ -28,5 +28,13 @@ public class TestRusksack
         var data = "awRspEwz";
         var rucksack = new Rucksack(data);
         rucksack.CommonItemType.Should().Be('w');
+    }
+    
+    [Fact]
+    public void CreateRucksack_Priority()
+    {
+        var data = "awRspEwz";
+        var rucksack = new Rucksack(data);
+        rucksack.Priority.Should().Be(23);
     }
 }
