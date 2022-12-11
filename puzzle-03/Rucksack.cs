@@ -14,6 +14,6 @@ public class Rucksack
         FirstCompartment = data.Substring(0, data.Length / 2);
         SecondCompartment = data.Substring(data.Length / 2, data.Length / 2);
         CommonItemType = FirstCompartment.Intersect(SecondCompartment).First();
-        Priority = CommonItemType - (char.IsLower(CommonItemType) ? 'a' : 'A') + 1;
+        Priority = char.IsLower(CommonItemType) ? CommonItemType - 'a' + 1 : CommonItemType - 'A' + 26 + 1;
     }
 }
