@@ -6,12 +6,12 @@ namespace puzzle_03_tests;
 public class TestJourney
 {
     [Fact]
-    public void CreateJourney_SingleRucksack()
+    public void CreateJourney_SingleGroup()
     {
-        var data = "vJrwpWtwJgWrhcsFMMfFFhFp";
+        var data = "wMqvLMZHhHMvwLHjbvcjnnSBnvTQFn\nttgJtRGJQctTZtZT\nCrZsJsPPZsGzwwsLwLmpwMDw";
         var journey = new Journey(data);
-        journey.Rucksacks.Count.Should().Be(1);
-        journey.SumPriorities.Should().Be(16);
+        journey.Groups.Count.Should().Be(1);
+        journey.SumPriorities.Should().Be(52);
     }
 
     [Fact]
@@ -19,11 +19,7 @@ public class TestJourney
     {
         var data = "vJrwpWtwJgWrhcsFMMfFFhFp\njqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL\nPmmdzqPrVvPwwTWBwg\nwMqvLMZHhHMvwLHjbvcjnnSBnvTQFn\nttgJtRGJQctTZtZT\nCrZsJsPPZsGzwwsLwLmpwMDw";
         var journey = new Journey(data);
-        journey.Rucksacks.Count.Should().Be(6);
-        journey.Rucksacks[0].CommonItemType.Should().Be('p');
-        journey.Rucksacks[0].Priority.Should().Be(16);
-        journey.Rucksacks[1].CommonItemType.Should().Be('L');
-        journey.Rucksacks[1].Priority.Should().Be(38);
-        journey.SumPriorities.Should().Be(157);
+        journey.Groups.Count.Should().Be(2);
+        journey.SumPriorities.Should().Be(70);
     }
 }
